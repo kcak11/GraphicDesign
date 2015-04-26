@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="blueBar" style="position:absolute;left:-1920px;top:0px;height:100px;width:1920px;background-color:blue;">
+</div>
+<div id="orangeBar" style="position:absolute;right:-1920px;top:100px;height:100px;width:1920px;background-color:orange;">
+</div>
+<div id="blueBar1" style="position:absolute;left:-1920px;top:200px;height:100px;width:1920px;background-color:red;">
+</div>
+<div id="orangeBar1" style="position:absolute;right:-1920px;top:300px;height:100px;width:1920px;background-color:yellow;">
+</div>
+<div id="blueBar2" style="position:absolute;left:-1920px;top:400px;height:100px;width:1920px;background-color:green;">
+</div>
+<div id="orangeBar2" style="position:absolute;right:-1920px;top:500px;height:100px;width:1920px;background-color:pink;">
+</div>
+<div id="blueBar3" style="position:absolute;left:-1920px;top:600px;height:100px;width:1920px;background-color:maroon;">
+</div>
+<div id="orangeBar3" style="position:absolute;right:-1920px;top:700px;height:100px;width:1920px;background-color:purple;">
+</div>
+<script type="text/javascript">
+document.documentElement.style.overflow="hidden";
+var bbar=document.getElementById("blueBar");
+var obar=document.getElementById("orangeBar");
+var bbar1=document.getElementById("blueBar1");
+var obar1=document.getElementById("orangeBar1");
+var bbar2=document.getElementById("blueBar2");
+var obar2=document.getElementById("orangeBar2");
+var bbar3=document.getElementById("blueBar3");
+var obar3=document.getElementById("orangeBar3");
+var ctr=0;
+var inc=2;
+function scrollIn(){
+    obar.style.right=bbar.style.left=obar1.style.right=bbar1.style.left=obar2.style.right=bbar2.style.left=obar3.style.right=bbar3.style.left=((-1920)+ctr)+"px";
+    ctr+=1*inc;
+    inc+=2;
+    if(ctr<1920){
+        setTimeout(function(){scrollIn();},20);
+    }else{
+        obar.style.right=bbar.style.left=obar1.style.right=bbar1.style.left=obar2.style.right=bbar2.style.left=obar3.style.right=bbar3.style.left="0px";
+    }
+}
+setTimeout(function(){scrollIn();},20);
+</script>
+</body>
+</html>
