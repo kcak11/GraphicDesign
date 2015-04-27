@@ -4,13 +4,13 @@
 <meta name="viewport" content="width=1500"/>
 <style type="text/css">
 .c1{
-background-color:#ffffff;padding:22px;box-shadow:0px 0px 22px rgb(0,128,255);border-radius:44px;width:880px;height:100px;position:absolute;top:655px;right:240px;font-family:Verdana;font-size:44px;font-weight:bold;
+background-color:#ffffff;padding:22px;box-shadow:0px 0px 22px rgb(0,128,255);border-radius:44px;width:880px;height:100px;position:absolute;top:35px;right:240px;font-family:Verdana;font-size:44px;font-weight:bold;
 }
 .c2{
 position:relative;left:30px;top:20px;
 }
 .c3{
-background-color:#ffffff;padding:22px;box-shadow:0px 0px 22px rgb(0,128,255);border-radius:100%;width:168px;height:168px;position:absolute;top:620px;right:175px;
+background-color:#ffffff;padding:22px;box-shadow:0px 0px 22px rgb(0,128,255);border-radius:100%;width:168px;height:168px;position:absolute;top:0;right:175px;
 }
 .c4{
 position:absolute;top:50%;left:50%;margin-left:-75px;margin-top:-75px;
@@ -18,6 +18,7 @@ position:absolute;top:50%;left:50%;margin-left:-75px;margin-top:-75px;
 </style>
 </head>
 <body style="background-image:url('http://cdn.ashishkumarkc.com/fetch?type=text/png&furl=https://raw.githubusercontent.com/kcak11/GraphicDesign/master/bg3.png');background-size:100% 100%;background-repeat:no-repeat;">
+<div id="masterDiv" style="position:absolute;top:620px;right:100px;width:1100px;height:500px;">
 <div class="c1">
 <div class="c2">http://ashishkumarkc.com</div>
 </div>
@@ -41,6 +42,7 @@ position:absolute;top:50%;left:50%;margin-left:-75px;margin-top:-75px;
 </div>
 <div class="c3">
 <img src="https://raw.githubusercontent.com/kcak11/code-project-121/master/web/resources/k11b-static/images/avatar.png" class="c4">
+</div>
 </div>
 <div id="dimensionDiv" style="height:2500px;"></div>
 <div>&nbsp;&nbsp;. . . .</div>
@@ -56,6 +58,12 @@ if((""+window.top.location.hash).indexOf("#dimension")!=-1){
 var dim=(""+window.top.location.hash).split("#dimension")[1];
 var w=dim.split("x")[0];
 var h=dim.split("x")[1];
+var t=dim.split("x")[2];
+var r=dim.split("x")[3];
+if(t && r){
+    document.getElementById("masterDiv").style.top=t+"px";
+    document.getElementById("masterDiv").style.right=r+"px";
+}
 document.getElementById("dimensionDiv").style.width=w+"px";
 document.getElementById("dimensionDiv").style.height=h+"px";
 }
